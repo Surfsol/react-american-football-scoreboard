@@ -22,7 +22,16 @@ function App() {
   const fieldgoalT = e => {
     setValueT(valueL + 3);
   };
+  const [quarter, setQuarter] = useState(1);
+  const nextQuarter = e => {
+    setQuarter(quarter + 1);
+  }
 
+  const reset = e => {
+    setValueL(0);
+    setValueT(0);
+  }
+  
   return (
     <div className="container">
       <section className="scoreboard">
@@ -59,6 +68,12 @@ function App() {
           <button onClick={fieldgoalT} className="awayButtons__fieldGoal">
             Away Field Goal
           </button>
+        </div>
+        <div>
+          <button onClick={nextQuarter}>Quarter</button>
+        </div>
+        <div>
+          <button onClick={reset}>Reset</button>
         </div>
       </section>
     </div>
